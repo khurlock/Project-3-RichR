@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+<<<<<<< Updated upstream
     "eject": "react-scripts eject",
     "server": "nodemon server.js"
   },
@@ -28,4 +29,21 @@
     "babel-register": "^6.26.0",
     "nodemon": "^1.17.5"
   }
+=======
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khurlock/Project-3-RichR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khurlock/Project-3-RichR/issues"
+  },
+  "homepage": "https://github.com/khurlock/Project-3-RichR#readme"
+>>>>>>> Stashed changes
 }

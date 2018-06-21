@@ -37,26 +37,26 @@ router.get(
 // @route POST api/profile
 // @desc Create User Profile
 // @access Private
-router.post(
-  "/",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    // Get fields
-    const profileFields = {};
-    profileFields.user = req.user.id;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.company) profileFields.company = req.body.ci;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-  }
-);
+// router.post(
+//   "/",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     // Get fields
+//     const profileFields = {};
+//     profileFields.user = req.user.id;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.company) profileFields.company = req.body.ci;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//     if (req.body.handle) profileFields.handle = req.body.handle;
+//   }
+// );
 
 module.exports = router;

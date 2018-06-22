@@ -16,7 +16,10 @@ class Landing extends Component {
                   Find out now...
                 </p>
                 <hr />
-                <a href="register.html" className="btn btn-lg btn-info mr-2">
+                <a
+                  href="register.html"
+                  className="get-richr btn btn-lg btn-info mr-2"
+                >
                   Get RichR
                   {/* </a>
                 {/* <a href="login.html" className="btn btn-lg btn-light">

@@ -44,3 +44,18 @@ img {
   width: 40px;
   padding-left: 10px;
 }
+
+.get-richr {
+  width: 254px;
+  height: 96px;
+  font-size: 50px;
+  background-color: green;
+}
+
+.display-3 {
+  font-size: 125px;
+}
+
+.lead {
+  font-size: 40px;
+}

@@ -4,7 +4,7 @@ img {
 
 .landing {
   position: relative;
-  background: url("./img/Raining-Money.jpg") no-repeat;
+  background: url("./img/pexels-money.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -16,14 +16,14 @@ img {
   padding-top: 80px;
 }
 
-.dark-overlay {
+/* .dark-overlay {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
+} */
 
 .card-form {
   opacity: 0.9;
@@ -54,8 +54,11 @@ img {
 
 .display-3 {
   font-size: 125px;
+  color: black;
 }
 
 .lead {
   font-size: 40px;
+  color: black;
+  font-weight: 450;
 }

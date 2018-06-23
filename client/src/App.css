@@ -17,7 +17,7 @@ img {
 }
 
 /* .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.075);
   position: absolute;
   top: 0;
   left: 0;
@@ -61,4 +61,14 @@ img {
   font-size: 40px;
   color: black;
   font-weight: 450;
+}
+
+.sign-up-here {
+  padding-left: 5px;
+  text-decoration: underline;
+}
+
+.login-here {
+  padding-left: 5px;
+  text-decoration: underline;
 }

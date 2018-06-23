@@ -19,7 +19,7 @@ class Landing extends Component {
                 <hr />
                 <Link
                   className="get-richr btn btn-lg btn-info mr-2"
-                  to="/register"
+                  to="/login"
                 >
                   Get RichR
                   {/* </a>

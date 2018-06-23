@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import classnames from "classnames";
+import { Link } from "react-router-dom";
+import { registerUser } from "../../actions/authActions";
+import { connect } from "react-redux";
 
 class Register extends Component {
   constructor() {
@@ -31,10 +34,12 @@ class Register extends Component {
       password2: this.state.password2
     };
 
-    axios
-      .post("/api/users/register", newUser)
-      .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data }));
+    this.props.registerUser(newUser);
+
+    // axios
+    //   .post("/api/users/register", newUser)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => this.setState({ errors: err.response.data }));
   }
 
   render() {
@@ -108,6 +113,12 @@ class Register extends Component {
                     <div className="invalid-feedback">{errors.password2}</div>
                   )}
                 </div>
+                <div>
+                  Already have an account? Login
+                  <Link className="login-here" to="login">
+                    here
+                  </Link>
+                </div>
                 <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
@@ -118,4 +129,11 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  null,
+  { mapStateToProps, registerUser }
+)(Register);

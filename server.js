@@ -3,11 +3,12 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
-const users = require("./routes/api/users");
-const profile = require("./routes/api/profile");
-const income = require("./routes/api/income");
-const expenses = require("./routes/api/expenses");
-const home = require("./routes/api/home");
+const users = require("./client/src/routes/api/users");
+const profile = require("./client/src/routes/api/profile");
+const income = require("./client/src/routes/api/income");
+const expenses = require("./client/src/routes/api/expenses");
+const home = require("./client/src/routes/api/home");
+const userForm = require ("./client/src/routs/api/")
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB config
-const db = require("./config/keys").mongoURI;
+const db = require(".client/src/config/keys").mongoURI;
 
 // connect to MongoDB
 mongoose

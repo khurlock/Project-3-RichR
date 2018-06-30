@@ -1,9 +1,8 @@
 import React, { Component } from "react";
+import "./Calculator.css";
 
 import VarExp from "../VarExp";
-import VarInc from "../VarInc";
-
-
+import VarInc from "../VarInc"; 
 
 class Calculator extends Component {
   state = {
@@ -14,7 +13,7 @@ class Calculator extends Component {
     monthlyUtilities: "",
     retainedEarnings: "",
     variableIncome: [],
-    variableExpenses:[]
+    variableExpenses: []
   };
 
   handleInputChange = event => {
@@ -29,44 +28,39 @@ class Calculator extends Component {
   };
 
   submitNewVarInc = value => {
-    var updateVarInc = this.state.variableIncome.slice();    
-    updateVarInc.push(value);   
-    this.setState({variableIncome: updateVarInc})
-} 
+    var updateVarInc = this.state.variableIncome.slice();
+    updateVarInc.push(value);
+    this.setState({ variableIncome: updateVarInc });
+  };
 
-submitNewVarExp = value => {
-    var updateVarExp = this.state.variableExpenses.slice();    
-    updateVarExp.push(value);   
-    this.setState({variableExpenses: updateVarExp})
-} 
+  submitNewVarExp = value => {
+    var updateVarExp = this.state.variableExpenses.slice();
+    updateVarExp.push(value);
+    this.setState({ variableExpenses: updateVarExp });
+  };
 
-sumOfVarInc = () => {
-  if(this.state.variableIncome.length === 0){
-    return 0;
-  }
-  else{
-    let total = 0;
-    for(let key in this.state.variableIncome){
-      
-      total += parseInt(this.state.variableIncome[key]);
+  sumOfVarInc = () => {
+    if (this.state.variableIncome.length === 0) {
+      return 0;
+    } else {
+      let total = 0;
+      for (let key in this.state.variableIncome) {
+        total += parseInt(this.state.variableIncome[key]);
+      }
+      return total;
     }
-    return total;
-  }
-}
-sumOfVarExp = () => {
-  if(this.state.variableExpenses.length === 0){
-    return 0;
-  }
-  else{
-    let total = 0;
-    for(let key in this.state.variableExpenses){
-      
-      total += parseInt(this.state.variableExpenses[key]);
+  };
+  sumOfVarExp = () => {
+    if (this.state.variableExpenses.length === 0) {
+      return 0;
+    } else {
+      let total = 0;
+      for (let key in this.state.variableExpenses) {
+        total += parseInt(this.state.variableExpenses[key]);
+      }
+      return total;
     }
-    return total;
-  }
-}
-
+  };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -78,7 +72,8 @@ sumOfVarExp = () => {
       this.state.monthlyUtilities * 12;
     console.log(annualExpenses);
 
-    let retainedEarnings = annualIncome - annualExpenses + this.sumOfVarInc() - this.sumOfVarExp()
+    let retainedEarnings =
+      annualIncome - annualExpenses + this.sumOfVarInc() - this.sumOfVarExp();
     console.log(retainedEarnings);
 
     this.setState({
@@ -88,114 +83,116 @@ sumOfVarExp = () => {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-6">
-          <h1> Fill in the info below. </h1>
-          <h2> Income </h2>
-          <form>
-            <label>
-              Net income on latest paycheck
-              <input
-                type="text"
-                name="netIncome"
-                value={this.state.netIncome}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
-            <br />
-            <label>
-              Pay Frequency
-              <input
-                type="radio"
-                name="payFrequency"
-                value={52}
-                onChange={this.handleInputChange}
-              />
-              Weekly
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="payFrequency"
-                value={26}
-                onChange={this.handleInputChange}
-              />
-              Biweekly
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="payFrequency"
-                value={24}
-                onChange={this.handleInputChange}
-              />
-              Semi-Monthly
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="payFrequency"
-                value={12}
-                onChange={this.handleInputChange}
-              />
-              Monthly
-            </label>
-            <h2> Expenses </h2>
-            <p>
-              Enter how much you pay each month for each of the following bills.
-            </p>
-            <label>
-              Mortgage or Rent
-              <input
-                type="text"
-                name="monthlyHousing"
-                value={this.state.monthlyHousing}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
-            <br />
-            <label>
-              Insurance Payments
-              <input
-                type="text"
-                name="monthlyInsurance"
-                value={this.state.monthlyInsurance}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
-            <br />
-            <label>
-              Phone and Utilities
-              <input
-                type="text"
-                name="monthlyUtilities"
-                value={this.state.monthlyUtilities}
-                onChange={this.handleInputChange}
-              />
-            </label>
-            <br />
-            <br />
-            {/* <input type="submit" value="Submit" onChange={this.handleInputChange}/> */}
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <h1> Fill in the info below. </h1>
+            <h2> Income </h2>
+            <form>
+              <label>
+                Net income on latest paycheck
+                <input
+                  type="text"
+                  name="netIncome"
+                  value={this.state.netIncome}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <br />
+              <br />
+              <label>
+                Pay Frequency
+                <input
+                  type="radio"
+                  name="payFrequency"
+                  value={52}
+                  onChange={this.handleInputChange}
+                />
+                Weekly
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="payFrequency"
+                  value={26}
+                  onChange={this.handleInputChange}
+                />
+                Biweekly
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="payFrequency"
+                  value={24}
+                  onChange={this.handleInputChange}
+                />
+                Semi-Monthly
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="payFrequency"
+                  value={12}
+                  onChange={this.handleInputChange}
+                />
+                Monthly
+              </label>
+              <h2> Expenses </h2>
+              <p>
+                Enter how much you pay each month for each of the following
+                bills.
+              </p>
+              <label>
+                Mortgage or Rent
+                <input
+                  type="text"
+                  name="monthlyHousing"
+                  value={this.state.monthlyHousing}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <br />
+              <br />
+              <label>
+                Insurance Payments
+                <input
+                  type="text"
+                  name="monthlyInsurance"
+                  value={this.state.monthlyInsurance}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <br />
+              <br />
+              <label>
+                Phone and Utilities
+                <input
+                  type="text"
+                  name="monthlyUtilities"
+                  value={this.state.monthlyUtilities}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <br />
+              <br />
+              {/* <input type="submit" value="Submit" onChange={this.handleInputChange}/> */}
 
-            <input
-              type="button"
-              placeholder="submit"
-              value="Submit"
-              onClick={this.handleSubmit}
-            />
-          </form>
+              <input
+                type="button"
+                placeholder="submit"
+                value="Submit"
+                onClick={this.handleSubmit}
+              />
+            </form>
 
-          <br />
-          <br />
+            <br />
 
-          <div>{this.state.retainedEarnings}</div>
-        </div>
-        <div className="col-md-6">
-          <VarInc callbackFromParent={this.submitNewVarInc} />
-          <VarExp callbackFromParent={this.submitNewVarExp} />
+            <div id="user-total" >${this.state.retainedEarnings}</div>
+          </div>
+          <div className="col-md-6">
+            <VarInc callbackFromParent={this.submitNewVarInc} />
+            <VarExp callbackFromParent={this.submitNewVarExp} />
+          </div>
         </div>
       </div>
     );

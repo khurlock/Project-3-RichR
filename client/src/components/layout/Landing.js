@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 
+import "./Landing.css";
+
 class Landing extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
@@ -17,7 +19,7 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">RichR</h1>
+                <h1 className="display-3 mb-4" id="richr-heading">RichR</h1>
                 <p className="lead">
                   {" "}
                   At the end of this year, will you be richer?

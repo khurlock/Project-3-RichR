@@ -2,13 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const income = require("./routes/api/income");
 const expenses = require("./routes/api/expenses");
 const home = require("./routes/api/home");
-const path = require("path");
 
 const app = express();
 

@@ -8,6 +8,7 @@ const profile = require("./routes/api/profile");
 const income = require("./routes/api/income");
 const expenses = require("./routes/api/expenses");
 const home = require("./routes/api/home");
+const path = require("path");
 
 const app = express();
 

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import VarExp from "./VarExp";
-import VarInc from "./VarInc";
+import VarExp from "../VarExp";
+import VarInc from "../VarInc";
+
+
 
 class Calculator extends Component {
   state = {
@@ -12,7 +14,7 @@ class Calculator extends Component {
     monthlyUtilities: "",
     retainedEarnings: "",
     variableIncome: [],
-    variableExpenses: []
+    variableExpenses:[]
   };
 
   handleInputChange = event => {
@@ -27,16 +29,44 @@ class Calculator extends Component {
   };
 
   submitNewVarInc = value => {
-    var updateVarInc = this.state.variableIncome.slice();
-    updateVarInc.push(value);
-    this.setState({ variableIncome: updateVarInc });
-  };
+    var updateVarInc = this.state.variableIncome.slice();    
+    updateVarInc.push(value);   
+    this.setState({variableIncome: updateVarInc})
+} 
 
-  submitNewVarExp = value => {
-    var updateVarExp = this.state.variableExpenses.slice();
-    updateVarExp.push(value);
-    this.setState({ variableExpenses: updateVarExp });
-  };
+submitNewVarExp = value => {
+    var updateVarExp = this.state.variableExpenses.slice();    
+    updateVarExp.push(value);   
+    this.setState({variableExpenses: updateVarExp})
+} 
+
+sumOfVarInc = () => {
+  if(this.state.variableIncome.length === 0){
+    return 0;
+  }
+  else{
+    let total = 0;
+    for(let key in this.state.variableIncome){
+      
+      total += parseInt(this.state.variableIncome[key]);
+    }
+    return total;
+  }
+}
+sumOfVarExp = () => {
+  if(this.state.variableExpenses.length === 0){
+    return 0;
+  }
+  else{
+    let total = 0;
+    for(let key in this.state.variableExpenses){
+      
+      total += parseInt(this.state.variableExpenses[key]);
+    }
+    return total;
+  }
+}
+
 
   handleSubmit = event => {
     event.preventDefault();
@@ -48,8 +78,7 @@ class Calculator extends Component {
       this.state.monthlyUtilities * 12;
     console.log(annualExpenses);
 
-    let retainedEarnings =
-      annualIncome - annualExpenses; /*add other vars here*/
+    let retainedEarnings = annualIncome - annualExpenses + this.sumOfVarInc() - this.sumOfVarExp()
     console.log(retainedEarnings);
 
     this.setState({

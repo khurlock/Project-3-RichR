@@ -9,6 +9,10 @@ const profile = require("./routes/api/profile");
 const income = require("./routes/api/income");
 const expenses = require("./routes/api/expenses");
 const home = require("./routes/api/home");
+<<<<<<< HEAD
+=======
+const userform = require ("./routes/api/userform")
+>>>>>>> rerouted some stuff
 
 const app = express();
 
@@ -37,6 +41,7 @@ app.use("/api/profile", profile);
 app.use("/api/income", income);
 app.use("/api/expenses", expenses);
 app.use("/api/home", home);
+app.use("/api/userform", userform);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
